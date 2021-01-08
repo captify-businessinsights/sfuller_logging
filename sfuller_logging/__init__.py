@@ -1,2 +1,1 @@
-from .Gaussiandistribution import Gaussian
-from .Binomialdistribution import Binomial
+from .logfiles import *
