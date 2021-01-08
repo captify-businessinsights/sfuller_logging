@@ -1,8 +1,8 @@
 from setuptools import setup
 
-setup(name='dist_alx',
+setup(name='sfuller_logging',
       version='0.0',
-      description='Gaussian and Binomial distributions',
-      packages=['dist_alx'],
-      author_email='mihajlovic.aleksa@gmail.com',
+      description='logging shortcut',
+      packages=['sfuller_logging'],
+      author_email='sebastian.fuller@captify.co.uk',
       zip_safe=False)
