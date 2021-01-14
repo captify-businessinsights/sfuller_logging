@@ -3,7 +3,7 @@ import logging.handlers
 import os
 
 def setup_logs(filename, toaddrs):
-    logging.basicConfig(filename=filename,
+    logging.basicConfig(filename=filename+".log",
                         format='%(levelname)s: %(asctime)s %(message)s',
                         datefmt='%m/%d/%Y %I:%M:%S %p', level=logging.INFO)
 
