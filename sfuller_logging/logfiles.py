@@ -12,7 +12,7 @@ def setup_logs(filename, toaddrs):
                                                 toaddrs=[toaddrs],
                                                 credentials=(os.getenv("GOOGLE_EMAIL"), os.getenv("GOOGLE_PASSWORD")),
                                                 secure=(),
-                                                subject=f"{os.path.basename(__file__)} failed to run"
+                                                subject=f"{filename} failed to run"
                                             )
 
     log_email = logging.getLogger("email")
