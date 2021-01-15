@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='sfuller_logging',
-      version='0.5',
+      version='0.6',
       description='logging shortcut',
       packages=['sfuller_logging'],
       author_email='sebastian.fuller@captify.co.uk',
