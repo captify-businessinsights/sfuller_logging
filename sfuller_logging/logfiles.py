@@ -2,11 +2,11 @@ import logging
 import logging.handlers
 import os
 
-def setup_logs(filename, toaddrs, user=os.getlogin()):
-    if user != os.getlogin():
+def setup_logs(filename, toaddrs, skip_user_path=False):
+    if skip_user_path:
         filepath = f"{filename}.log"
     else:
-        filepath = f"/home/{user}/log/{filename}.log"
+        filepath = f"/home/{os.getenv("USER")}/log/{filename}.log"
     
     logging.basicConfig(filename=filepath,
                         format='%(levelname)s: %(asctime)s %(message)s',
