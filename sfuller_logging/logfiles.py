@@ -2,18 +2,11 @@ import logging
 import logging.handlers
 import os
 
-def setup_logs(filename, toaddrs, manual_path=False):
-    import os
-    print(os.getcwd())
-    
+def setup_logs(filename, toaddrs, manual_path=False):  
     if manual_path:
         filepath = f"{manual_path}{filename}.log"
-    elif toaddrs=="sebastian.fuller@captify.co.uk":
-        filepath = f"/home/sebastian_fuller/log/{filename}.log"
-    elif toaddrs=="business.insights@captify.co.uk":
-        filepath = f"/home/andrea_tonali/log/{filename}.log"
     else:
-        filepath = f"{filename}.log"
+        filepath = f"{os.getcwd()}/log/{filename}.log"
     
     logging.basicConfig(filename=filepath,
                         format='%(levelname)s: %(asctime)s %(message)s',
@@ -32,7 +25,7 @@ def setup_logs(filename, toaddrs, manual_path=False):
     log_email.setLevel(logging.ERROR)
 
     class PrintToConsole:
-        def info(txt):
+        def info(self, txt):
             print(txt)
 
     log_file = PrintToConsole()
