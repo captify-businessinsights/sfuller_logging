@@ -8,9 +8,9 @@ def setup_logs(filename, toaddrs, manual_path=False):
     
     if manual_path:
         filepath = f"{manual_path}{filename}.log"
-    elif toaddrs="sebastian.fuller@captify.co.uk":
+    elif toaddrs=="sebastian.fuller@captify.co.uk":
         filepath = f"/home/sebastian_fuller/log/{filename}.log"
-    elif toaddrs="business.insights@captify.co.uk":
+    elif toaddrs=="business.insights@captify.co.uk":
         filepath = f"/home/andrea_tonali/log/{filename}.log"
     else:
         filepath = f"{filename}.log"
