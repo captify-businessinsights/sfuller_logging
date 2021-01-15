@@ -2,11 +2,18 @@ import logging
 import logging.handlers
 import os
 
-def setup_logs(filename, toaddrs, skip_user_path=False):
-    if skip_user_path:
-        filepath = f"{filename}.log"
+def setup_logs(filename, toaddrs, manual_path=False):
+    import os
+    print(os.getcwd())
+    
+    if manual_path:
+        filepath = f"{manual_path}{filename}.log"
+    elif toaddrs="sebastian.fuller@captify.co.uk":
+        filepath = f"/home/sebastian_fuller/log/{filename}.log"
+    elif toaddrs="business.insights@captify.co.uk":
+        filepath = f"/home/andrea_tonali/log/{filename}.log"
     else:
-        filepath = f"/home/{os.getenv('USER')}/log/{filename}.log"
+        filepath = f"{filename}.log"
     
     logging.basicConfig(filename=filepath,
                         format='%(levelname)s: %(asctime)s %(message)s',
