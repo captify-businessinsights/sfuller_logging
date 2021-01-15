@@ -1,3 +1,16 @@
 pip install git+https://github.com/captify-sfuller/sfuller_logging
 
+
+
 from sfuller_logging import setup_logs
+
+log_file, log_email = setup_logs(YOUR_LOGFILE_NAME.log, YOUR_EMAIL)
+
+try:
+    ##########################################
+    YOUR SCRIPT HERE
+    ##########################################
+
+    log_file.info("fin.")
+except Exception as e:
+    log_email.exception(f'Unhandled Exception in {__file__}\n\n')
