@@ -1,6 +1,7 @@
 import logging
 import logging.handlers
 import os
+from datetime import datetime
 
 def setup_logs(filename, toaddrs, manual_path=False):  
     if manual_path:
@@ -26,7 +27,9 @@ def setup_logs(filename, toaddrs, manual_path=False):
 
     class PrintToConsole:
         def info(self, txt):
-            print(txt)
+            now = datetime.now()
+            current_time = now.strftime("%Y/%m/%d %H:%M:%S")
+            print(f"{current_time}: {txt}")
 
     log_file = PrintToConsole()
 
