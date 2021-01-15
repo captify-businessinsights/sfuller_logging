@@ -31,6 +31,10 @@ def setup_logs(filename, toaddrs, manual_path=False):
     log_email.addHandler(smtp_handler)
     log_email.setLevel(logging.ERROR)
 
-    log_file = logging.getLogger("file")
+    class PrintToConsole:
+        def info(txt):
+            print(txt)
+
+    log_file = PrintToConsole()
 
     return log_file, log_email
