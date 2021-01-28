@@ -7,7 +7,14 @@ def setup_logs(filename, toaddrs, manual_path=False):
     if manual_path:
         filepath = f"{manual_path}{filename}.log"
     else:
-        filepath = f"{os.getcwd()}/log/{filename}.log"
+        if "/home/sebastian_fuller/analytics" in os.getcwd():
+            filepath = f"/home/sebastian_fuller/log/{filename}.log"
+        elif "/home/andrea_tonali/analytics" in os.getcwd():
+            filepath = f"/home/andrea_tonali/log/{filename}.log"
+        else:
+            if not os.path.isdir('log'):
+                os.mkdir('log')
+            filepath = f"{os.getcwd()}/log/{filename}.log"
     
     logging.basicConfig(filename=filepath,
                         format='%(levelname)s: %(asctime)s %(message)s',
